@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TradeSignal Pro</title>
+<style>
+body {
+  margin: 0;
+  padding: 20px;
+  background: #0b1220;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+.card {
+  background: #17243a;
+  padding: 20px;
+  border-radius: 14px;
+  margin: 18px 0;
+}
+h1 { color: #5ee0a0; }
+select, button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+button {
+  background: #5ee0a0;
+  border: none;
+  font-weight: bold;
+}
+p { color: #bdc9dc; line-height: 1.5; }
+</style>
+</head>
+<body>
+<h1>TradeSignal Pro</h1>
+<p>Painel de análise de mercado</p>
+
+<div class="card">
+  <h2>Configurar análise</h2>
+  <label for="ativo">Escolha o ativo:</label>
+  <select id="ativo">
+    <option>EUR/USD</option>
+    <option>GBP/USD</option>
+    <option>USD/JPY</option>
+  </select>
+
+  <label for="periodo">Período:</label>
+  <select id="periodo">
+    <option>M15</option>
+    <option>M5</option>
+    <option>M1</option>
+  </select>
+
+  <button onclick="analisar()">Verificar estado</button>
+</div>
+
+<div class="card">
+  <h2>Resultado</h2>
+  <p id="resultado">
+    Aguardando conexão com dados de mercado.
+  </p>
+</div>
+
+<script>
+function analisar() {
+  const ativo = document.getElementById("ativo").value;
+  const periodo = document.getElementById("periodo").value;
+
+  document.getElementById("resultado").textContent =
+    ativo + " | " + periodo +
+    " — Sem dados ao vivo. Nenhum sinal confirmado.";
+}
+</script>
+</body>
+</html>
